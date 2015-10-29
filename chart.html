@@ -1,0 +1,29 @@
+<html>
+ <head>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+        google.load('visualization', '1', {packages:['corechart']});
+        google.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Estimate'],
+                ['2010', 75139],
+                ['2011', 77458],
+                ['2012', 79997],
+                ['2013', 82067],
+                ['2014', 89949]
+            ]);
+            var options = {
+                title: 'Estimate for Age for 100'
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            
+            chart.draw(data, options);
+        }
+     </script>
+ </head>
+ <body>
+     <div id="chart_div" style="width: 900px; height: 500px;"></div>
+ </body>
+</html>
