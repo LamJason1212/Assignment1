@@ -10,7 +10,7 @@ router.get('/', function(req, res, next){
 
 /* Get data with /data. */
 router.get('/data', function(req, res, next){
-    PopulationData.find({AGE: {$gt: 17, $lt: 22}, POPESTIMATE2014: 1}, {_id: 0}, function(err, data){
+    PopulationData.find({AGE: {$gt: 17, $lt: 22}}, {_id: 0, AGE: 1, POPESTIMATE2014: 1}, function(err, data){
         if(err){ return next(err);}
         res.json(data);
     });
